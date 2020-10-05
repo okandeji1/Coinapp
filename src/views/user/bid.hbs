@@ -1,0 +1,111 @@
+{{!-- <div class="content-wrapper">
+  <div class="container-fluid"> --}}
+    <!-- Breadcrumb-->
+    <div class="row pt-2 pb-2">
+      <div class="col-sm-9">
+      <h4 class="page-title"></h4>
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="javaScript:void();">Pcoin</a></li>
+          <li class="breadcrumb-item"><a href="javaScript:void();">Buyer</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Bidder</li>
+        </ol>
+    </div>
+    </div>
+  <!-- End Breadcrumb-->
+
+<h6 class="text-uppercase">Buy Coin</h6>
+      <hr>
+  <div class="row">
+    <div class="col-12 col-lg-6">
+    <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <div class="card-action">
+          {{!-- <div class="dropdown">
+          <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
+          <i class="icon-options"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="javascript:void();">Action</a>
+          <a class="dropdown-item" href="javascript:void();">Another action</a>
+          <a class="dropdown-item" href="javascript:void();">Something else here</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="javascript:void();">Separated link</a>
+            </div>
+          </div> --}}
+        </div>
+      </div>
+      <h6>How much do you want to buy?</h6>
+      <form action="/bid/{{par}}" method="POST">
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label form-control-label">Coin Unit</label>
+            <div class="col-lg-9">
+                <input class="form-control" type="text" placeholder="Coin unit(s)" name="coin" required="true" >
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label form-control-label">Rate (#)</label>
+            <div class="col-lg-9">
+                <input class="form-control" type="text" placeholder="Rate..." name="amount" required="true" >
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label form-control-label"></label>
+            <div class="col-lg-9">
+                <button type="submit" name="submit" class="btn btn-outline-success" >Buy Now</button>
+            </div>
+        </div>
+      </form>
+    </div>
+    <div class="card-footer">
+          <a href="javascript:void();" class="card-link"></a>
+    </div>
+  </div>
+    </div>
+  </div><!--End Row-->
+  
+  
+  <h6 class="text-uppercase">List Of Coin Bidder </h6>
+      <hr>
+  <div class="row">
+    <div class="col-12 col-lg-12">
+    <div class="card">
+    <div class="card-body table-responsive">
+      <table class="table table-hover">
+        <tbody>
+          <tr>
+            <th>S/N</th>
+            <th>Seller ID</th>
+            <th>Unit coin</th>
+            <th>Amount</th>
+            <th>Created</th>
+            <th>Bid</th>
+          </tr>
+          {{#each sells}}
+          <tr>
+            <td>{{inc @index}}</td>
+            <td>{{_userId}}</td>
+            <td>{{coin}}</td>
+            <td>{{amount}}</td>
+            <td>{{createdAt}}</td>
+            {{!-- Button to trigger modal --}}
+            <td><a href="#" type="button" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-chess text-primary"></i></a></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+    <div class="card-footer">
+            <a href="#" class="card-link">Transfer</a>
+            <a href="#" class="card-link"></a>
+          </div>
+  </div>
+    </div>
+  </div><!--End Row-->
+  
+  {{!-- </div> --}}
+  <!-- End container-fluid-->
+
+{{!-- </div> --}}
+<!--End content-wrapper-->
+  

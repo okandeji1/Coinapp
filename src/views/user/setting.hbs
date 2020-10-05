@@ -1,0 +1,177 @@
+<!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Update Profile
+      </h1>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        {{!-- <li class="breadcrumb-item"><a href="#">Examples</a></li> --}}
+        <li class="breadcrumb-item active">Update profile</li>
+      </ol>
+    </section>
+
+ <!-- Main content -->
+    <section class="content">
+
+      <div class="row">
+        <div class="col-lg-3 col-12">
+
+          <!-- Profile Image -->
+          <div class="box bg-inverse bg-dark bg-hexagons-white">
+            <div class="box-body box-profile">
+              <img class="profile-user-img rounded-circle img-fluid mx-auto d-block" src="/assets/images/5.jpg" alt="User profile picture">
+
+              <h3 class="profile-username text-center">{{user.username}}</h3>
+
+              <p class="text-center">Accoubts Manager Jindal Cop.</p>
+				
+              <div class="row social-states">
+				  <div class="col-6 text-right"><a href="#" class="link text-white"><i class="ion ion-ios-people-outline"></i> 254</a></div>
+				  <div class="col-6 text-left"><a href="#" class="link text-white"><i class="ion ion-images"></i> 54</a></div>
+			  </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-lg-9 col-12">
+          <div class="container">
+                <form class="form-horizontal form-element col-12" action="/setting" method="POST" enctype="multipart/form-data">
+                  <div class="form-group row">
+                    <label for="firstname" class="col-sm-2 control-label">First Name</label>
+
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="firstname" id="firstname" placeholder="">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="lastname" class="col-sm-2 control-label">Last Name</label>
+
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="lastname" id="lastname" value="{{user.lastname}}" placeholder="">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="username" class="col-sm-2 control-label">Username</label>
+
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="username" id="username" placeholder="">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="email" class="col-sm-2 control-label">Email</label>
+
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="password" class="col-sm-2 control-label">Password</label>
+
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" name="password" id="password" placeholder="">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="address" class="col-sm-2 control-label">Address</label>
+
+                    <div class="col-sm-10">
+                      <textarea class="form-control" name="address" id="address" placeholder=""></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="country" class="col-sm-2 control-label">Country</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="country" id="country">
+                            <option value="">Select Country</option>
+                            <option value="nigeria">Nigeria</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="state" class="col-sm-2 control-label">State</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="country" id="country">
+                            <option value="">Select State</option>
+                            <option value="lagos">Lagos</option>
+                            <option value="kwara">Kwara</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="city" class="col-sm-2 control-label">City</label>
+
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="city" id="city" placeholder="">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="bio" class="col-sm-2 control-label">Bio</label>
+
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="bio" id="bio" placeholder="">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="state" class="col-sm-2 control-label">Gender</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="gender" id="gender">
+                            <option value="">Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="dob" class="col-sm-2 control-label">Date Of Birth</label>
+
+                    <div class="col-sm-10">
+                      <input type="date" class="form-control" id="dob" placeholder="">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="phone" class="col-sm-2 control-label">Phone</label>
+
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="phone" id="phone" placeholder="">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="network" class="col-sm-2 control-label">Network</label>
+
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="network" id="network" placeholder="">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="photo" class="col-sm-2 control-label">Photo</label>
+
+                    <div class="col-sm-10">
+                      <input type="file" class="form-control" name="photo" id="photo" placeholder="">
+                    </div>
+                  </div>
+                  {{!-- <div class="form-group row">
+                    <div class="ml-auto col-sm-10">
+                      <div class="checkbox">
+                       	<input type="checkbox" id="basic_checkbox_1" checked="">
+						<label for="basic_checkbox_1"> I agree to the</label>
+                          &nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Terms and Conditions</a>
+                      </div>
+                    </div>
+                  </div> --}}
+                  <div class="form-group row">
+                    <div class="ml-auto col-sm-10">
+                      <button type="submit" class="btn btn-outline-success">Submit</button>
+                    </div>
+                  </div>
+                </form>
+            </div>
+            <!-- /.tab-content -->
+        </div>
+        <!-- /.col -->
+     </div>
+      <!-- /.row -->
+
+    </section>
+    <!-- /.content -->

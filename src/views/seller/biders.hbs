@@ -1,0 +1,151 @@
+{{#extend 'stylesheets'}}
+<!-- Datatables -->
+{{!--
+<link href="/assets/plugins/bootstrap-datatable/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+<link href="/assets/plugins/bootstrap-datatable/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css"> --}}
+
+{{/extend}}
+
+<!-- Breadcrumb-->
+<div class="row pt-2 pb-2">
+    <div class="col-sm-9">
+        <h4 class="page-title">Biders</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javaScript:void();">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Biders Page</li>
+        </ol>
+    </div>
+</div>
+<!-- End Breadcrumb-->
+
+<div class="row">
+    <div class="col-12 col-lg-12">
+        <div class="card">
+            <div class="card-body table-responsive">
+                <table class="table table-hover">
+                    <tbody>
+                        <tr>
+                            <th>S/N</th>
+                            <th>Bidders ID</th>
+                            <th>Unit coin</th>
+                            <th>Amount</th>
+                            <th>Created</th>
+                            <th>Action</th>
+                        </tr>
+                        {{#each biders}}
+                        <tr>
+                            <td>{{inc @index}}</td>
+                            <td>{{_userId.firstname}} {{_userId.lastname}}</td>
+                            <td>{{coin}}</td>
+                            <td>{{amount}}</td>
+                            <td>{{createdAt}}</td>
+                            {{!-- Button to trigger modal --}}
+                            <td colspan="2">
+                                <button type="button" onclick="acceptBid(this.value)" value="{{_id}}" class="btn btn-success btn-round waves-effect waves-light m-1">Accept Bid
+                                    {{!-- <a href="/seller/biders/{{_id}}">Accept Bid</a> --}}
+                                </button>
+                                <button type="button" class="btn btn-danger btn-round waves-effect waves-light m-1">
+                                    <a href="/seller/biders/{{_id}}"> Reject Bid</a>
+                                </button>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="card-link">Transfer</a>
+                <a href="#" class="card-link"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Row-->
+
+
+
+{{#extend 'scripts'}}
+{{!-- <script src="/assets/plugins/bootstrap-datatable/js/jquery.dataTables.min.js"></script>
+<script src="/assets/plugins/bootstrap-datatable/js/dataTables.bootstrap4.min.js"></script>
+<script src="/assets/plugins/bootstrap-datatable/js/dataTables.buttons.min.js"></script>
+<script src="/assets/plugins/bootstrap-datatable/js/buttons.bootstrap4.min.js"></script>
+<script src="/assets/plugins/bootstrap-datatable/js/jszip.min.js"></script>
+<script src="/assets/plugins/bootstrap-datatable/js/pdfmake.min.js"></script>
+<script src="/assets/plugins/bootstrap-datatable/js/vfs_fonts.js"></script>
+<script src="/assets/plugins/bootstrap-datatable/js/buttons.html5.min.js"></script>
+<script src="/assets/plugins/bootstrap-datatable/js/buttons.print.min.js"></script>
+<script src="/assets/plugins/bootstrap-datatable/js/buttons.colVis.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        //Default data table
+        $('#default-datatable').DataTable();
+
+
+        var table = $('#example').DataTable({
+            lengthChange: false,
+            buttons: ['copy', 'excel', 'pdf', 'print', 'colvis']
+        });
+
+        table.buttons().container()
+            .appendTo('#example_wrapper .col-md-6:eq(0)');
+
+    });
+
+</script> --}}
+
+<script>
+
+function acceptBid(id) {
+
+    alert(id);
+
+        swal({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
+
+        }).then(function(result){
+            if (result.value) {
+
+                confirmBid(id);
+
+                swal(
+                    'Accepted!',
+                    'Project has been deleted.',
+                    'success'
+                )
+                .then(function(){
+                    location.reload();
+                });
+            } else if (result.dismiss === 'cancel') {
+                swal(
+                    'Cancelled',
+                    'Your imaginary file is safe :)',
+                    'error'
+                )
+            }
+        });
+    };
+
+
+    {{!-- function confirmBid(id){
+        var id = id;
+        $.ajax({
+            url: '{{url("/project/delete"',
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                "projectId": id
+            },
+            success: function(data){
+            }
+        });
+    } --}}
+
+</script>
+{{/extend}}

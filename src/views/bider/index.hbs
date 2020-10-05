@@ -1,0 +1,102 @@
+{{#extend 'stylesheets' }}
+
+<link href="/assets/plugins/bootstrap-datatable/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+<link href="/assets/plugins/bootstrap-datatable/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css">
+
+{{/ extend}}
+
+<!-- Breadcrumb-->
+<div class="row pt-2 pb-2">
+    <div class="col-sm-9">
+        <h4 class="page-title">Biders</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javaScript:void();">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="javaScript:void();">Seller</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Biders</li>
+        </ol>
+    </div>
+</div>
+<!-- End Breadcrumb-->
+
+<div class="row">
+    <div class="col-12 col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">
+                    <div class="card-action">
+                    </div>
+                </div>
+                <form action="/seller/bider/{{sellerId}}" method="POST">
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Coin Unit</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" type="text" placeholder="Coin unit(s)" name="coin" required="true">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label">Rate (#)</label>
+                        <div class="col-lg-9">
+                            <input class="form-control" type="text" placeholder="Rate..." name="amount" required="true">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label form-control-label"></label>
+                        <div class="col-lg-9">
+                            <button type="submit" class="btn btn-outline-success">Buy Now</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer"></div>
+        </div>
+    </div>
+</div>
+<!--End Row-->
+
+<div class="row">
+    <div class="col-12 col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">
+                    Total Number Of Biders
+                </div>
+                <h6>Total Number Of Biders Is <span class="badge badge-pill badge-light shadow-light m-1">{{biders}}</span> </h6>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Row-->
+
+
+
+{{#extend 'scripts'}}
+{{!-- < script src="/assets/plugins/bootstrap-datatable/js/jquery.dataTables.min.js">
+</script>
+    <script src="/assets/plugins/bootstrap-datatable/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/assets/plugins/bootstrap-datatable/js/dataTables.buttons.min.js"></script>
+    <script src="/assets/plugins/bootstrap-datatable/js/buttons.bootstrap4.min.js"></script>
+    <script src="/assets/plugins/bootstrap-datatable/js/jszip.min.js"></script>
+    <script src="/assets/plugins/bootstrap-datatable/js/pdfmake.min.js"></script>
+    <script src="/assets/plugins/bootstrap-datatable/js/vfs_fonts.js"></script>
+    <script src="/assets/plugins/bootstrap-datatable/js/buttons.html5.min.js"></script>
+    <script src="/assets/plugins/bootstrap-datatable/js/buttons.print.min.js"></script>
+    <script src="/assets/plugins/bootstrap-datatable/js/buttons.colVis.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            //Default data table
+            $('#default-datatable').DataTable();
+
+
+            var table = $('#example').DataTable({
+                lengthChange: false,
+                buttons: ['copy', 'excel', 'pdf', 'print', 'colvis']
+            });
+
+            table.buttons().container()
+                .appendTo('#example_wrapper .col-md-6:eq(0)');
+
+        });
+
+    </script> --}}
+    {{/ extend}}

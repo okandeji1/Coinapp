@@ -1,0 +1,75 @@
+ <aside class="main-sidebar">
+    <!-- sidebar -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+		 <div class="ulogo">
+			 <a href="index.html">
+			  <!-- logo for regular state and mobile devices -->
+			  <span><b>Premium </b>Coin</span>
+			</a>
+		</div>
+        <div class="image">
+          <img src="/assets/images/user2-160x160.jpg" class="rounded-circle" alt="User Image">
+        </div>
+        <div class="info">
+          <p>{{user.username}}</p>
+			<a href="" class="link" data-toggle="tooltip" title="" data-original-title="Settings"><i class="ion ion-gear-b"></i></a>
+            <a href="#" class="link" data-toggle="tooltip" title="" data-original-title="Email"><i class="ion ion-android-mail"></i></a>
+            <a href="/logout" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="ion ion-power"></i></a>
+        </div>
+      </div>
+      <!-- sidebar menu -->
+      <ul class="sidebar-menu" data-widget="tree">
+		<li class="nav-devider"></li>
+        <li class="header nav-small-cap">PERSONAL</li>
+        <li class="active">
+          <a href="/dashboard">
+            <i class="icon-home"></i> <span>Dashboard</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+        </li>
+         <li class="treeview">
+          <a href="#">
+            <i class="icon-wallet"></i>
+            <span>Transactions</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/seller">Sell Coin</a></li>	
+            <li><a href="/seller/market">Coin Market</a></li>  
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="icon-compass"></i>
+            <span>Initial Coin Offering</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            {{!-- <li><a href="pages/ico/ico-distribution-countdown.html">Countdown</a></li>
+            <li><a href="pages/ico/ico-roadmap-timeline.html">Roadmap/Timeline</a></li>
+            <li><a href="pages/ico/ico-progress.html">Progress Bar</a></li>
+            <li><a href="pages/ico/ico-details.html">Details</a></li>
+            <li><a href="pages/ico/ico-listing.html">ICO Listing</a></li>
+            <li><a href="pages/ico/ico-filter.html">ICO Listing - Filters</a></li>			   --}}
+          </ul>
+        </li>
+        <li>
+          <a href="#">
+            <i class="icon-refresh"></i> <span>Currency Exchange</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+        </li>
+		<li class="header nav-small-cap">EXTRA COMPONENTS</li>        
+      </ul>
+    </section>
+  </aside>
